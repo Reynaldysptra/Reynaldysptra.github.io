@@ -21,9 +21,9 @@ class Show {
         const loader = document.querySelector('.loader');
         const buttonAll = document.querySelector('.showDataAll');
 
-        this.api.getApi(`http://www.omdbapi.com/?apikey=34a2066e&s=naruto&page=${pageIndex}`).then(response1 => {
+        this.api.getApi(`https://www.omdbapi.com/?apikey=34a2066e&s=naruto&page=${pageIndex}`).then(response1 => {
             response1.Search.forEach((api1) => {
-                this.api.getApi(`http://omdbapi.com/?apikey=34a2066e&i=${api1.imdbID}`).then(response2 => {
+                this.api.getApi(`https://omdbapi.com/?apikey=34a2066e&i=${api1.imdbID}`).then(response2 => {
                     index++;
                     let data = this.dataFront(response2, index++);
 
@@ -49,9 +49,9 @@ class Show {
     showBack(pageIndex,index) {
         const body = document.querySelector('body');
 
-        this.api.getApi(`http://www.omdbapi.com/?apikey=34a2066e&s=naruto&page=${pageIndex}`).then(response1 => {
+        this.api.getApi(`https://www.omdbapi.com/?apikey=34a2066e&s=naruto&page=${pageIndex}`).then(response1 => {
             response1.Search.forEach((api1) => {
-                this.api.getApi(`http://omdbapi.com/?apikey=34a2066e&i=${api1.imdbID}`).then(response2 => {
+                this.api.getApi(`https://omdbapi.com/?apikey=34a2066e&i=${api1.imdbID}`).then(response2 => {
                     let data = this.dataPoster(response2,index++);
                     body.appendChild(data);
                 })
