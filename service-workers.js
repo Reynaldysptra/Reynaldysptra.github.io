@@ -53,7 +53,7 @@ async function cacheFirst(req) {
      return cached || fetch(req);
 }
 
-async function networkRequest(requ) {
+async function networkRequest(req) {
      const cache = await caches.open(cahce_name);
 
      try {
