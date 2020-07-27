@@ -1,0 +1,298 @@
+nav {
+     width: 100%;
+     position: fixed;
+     top: 0;
+     z-index: 1000;
+}
+
+nav::after {
+     content: '';
+     position: absolute;
+     bottom: 0;
+     width: 100%;
+     height: 8px;
+     background-color: #1976d2;
+}
+
+.logo{
+     text-transform: uppercase;
+     color: #FFE1C4 !important;
+     font-size: 1.7em !important;
+}
+
+nav .logo span{
+     font-weight: bold;
+}
+
+.bodyContainer {
+     width: 82%;
+     margin: auto;
+     margin-top: 7% !important;
+}
+
+.bodyContainer strong{ 
+     font-size: 1.3em;
+}
+
+.loader {
+     width: 100%;
+     height: 40vh;
+     display: flex;
+     justify-content: center;
+     margin-top: 10%;
+}
+
+.loader img{
+     width: auto;
+     height: 40%;
+}
+
+.card-content {
+     height: 20vh;
+     padding: 20px !important;
+     overflow: scroll !important;
+}
+
+.card-action center {
+     padding-top: 0px !important;
+     padding-bottom: 0px !important;
+}
+
+.card-image {
+     overflow: hidden !important;
+     height: 40vh !important;
+}
+
+.card-content {
+     padding-top: 10px !important;
+}
+
+.modal-header {
+     border-top: 1px solid rgba(0, 0, 0, 0.1);
+     padding: 10px !important;
+     padding-top: 0px !important;
+     box-sizing: border-box;
+ }
+
+ .modal-header h4{
+      margin-bottom: 0px;
+      font-family: sans-serif;
+}
+
+ .modal-header {
+     border-radius: 0 0 2px 2px;
+     background-color: #fafafa;
+     padding: 4px 6px;
+     height: 56px;
+     width: 100%;
+ }
+
+ .modal-content {
+      padding-top: 15px !important;
+}
+
+ .modal-content .row .cardContentHeader img{
+      width: 100%;
+ }
+
+ .modal-content ul {
+      margin: 0px !important;
+      margin-bottom: 50px !important;
+ }
+
+ .showDataAll {
+      width: 100%;
+      margin-top:7%;
+      margin-bottom: 7%;
+      display: none;
+ }
+
+ .showDataAll a {background-color: #1E88E5 !important;}
+
+#footerH5 {
+     font-weight: 300;
+}
+
+#footerH5 span{
+     font-weight: bold;
+}
+
+footer ul li {
+     padding: 10px;
+     box-sizing: border-box;
+     margin:10px;
+}
+
+footer ul li i{
+     font-size: 1.5em !important;
+     color: white;
+}
+
+footer ul li a{
+     color: white;
+}
+
+footer ul li a span {
+     font-size: 1.5em;
+     margin-left: 3%;
+}
+
+footer ul li:nth-child(1) {background-color: #3B5998;}
+footer ul li:nth-child(2) {background-color: #FF0000;}
+
+/* ---------- STYLE 2 ---------- */
+.containerText {
+     margin-top: 7% !important;
+}
+
+form {
+     height: auto;
+}
+
+.range-field {
+     margin-top: 10% !important;
+}
+
+.rowText {
+     margin-bottom: 0px !important;
+}
+
+.footerTiket {
+     margin-top: 5%;
+}
+
+/* ---------- STYLE 3 ---------- */
+.tentangContainer {
+     width: 82%;
+     margin: auto;
+     margin-top: 7% !important;
+}
+
+.tentangContainer i{
+     font-weight: 350;
+}
+
+.tentangContainer strong{
+     font-weight: bold;
+ }
+
+ #kontak {
+      text-align: center;
+ }
+
+ #kontak img {
+      width: 30%;
+      border-radius: 50%;
+ }
+
+ #kontak h5{
+      font-family: sans-serif;
+      font-weight: bold;
+ }
+
+ #kontak a{color: #333;}
+
+ #kontak button {
+      background-color: transparent;
+      border: 2px solid #333;
+      padding: 5px 20px;
+      transition: 0.4s;
+ }
+
+ #kontak button:hover {
+      background: black;
+      color: white;
+ }
+
+@media screen 
+     and (min-width : 200px)
+     and (max-width : 760px) {
+          form {
+               width: 85%;
+               margin : auto;
+          }
+
+          .bodyContainer {
+               width: 95%;
+               margin-top: 20% !important;
+          }
+
+          .containerText {
+               margin-top: 20% !important;
+          }
+
+          .footerTiket {
+               margin-top: 10%;
+          }
+
+          .tentangContainer {
+               margin-top: 20% !important;
+          }
+
+          .modal-content ul {
+               margin-top: 10% !important;
+          }
+
+          .card-image {
+               height: 40vh !important;
+          }
+
+          .loader {
+               margin-top: 50%;
+          }
+}
+
+@media screen 
+     and (min-width : 200px)
+     and (max-width : 760px)
+     and (orientation : landscape) {
+          .bodyContainer {
+               width: 95%;
+               margin-top: 13% !important;
+          }
+
+          .containerText {
+               margin-top: 13% !important;
+          }
+
+          .tentangContainer {
+               margin-top: 13% !important;
+          }
+
+          .modal-content ul {
+               margin-top: 0% !important;
+          }
+
+          .card-image {
+               height: 55vh !important;
+          }
+}
+
+@media screen 
+     and (min-width : 768px) 
+     and (max-width : 1112px) {
+          .bodyContainer {
+               margin-top: 10% !important;
+          }
+
+          .containerText {
+               margin-top: 10% !important;
+          }
+
+          .footerTiket {
+               margin-top: 10%;
+          }
+
+          .tentangContainer {
+               margin-top: 10% !important;
+          }
+
+          .card-image {
+               height: 30vh !important;
+          }
+
+          .card-content {
+               height: 15vh;
+          }
+          
+}
