@@ -14,7 +14,7 @@ const cache = [
      './img/icon.png',
      './img/logo.png',
      './img/me.jpg',
-''
+     ''
 ];
 
 self.addEventListener('install', function (event) {
@@ -30,38 +30,25 @@ self.addEventListener('fetch', function (event) {
      const req = event.request;
      const url = new URL(req.url);
 
-     if(url.origin === location.origin) {
-          event.respondWith(cacheFirst(req))
-     }else {
-          event.respondWith(networkRequest(req));
-     }
+     event.respondWith(
+          caches.open(cahce_name).then(function (cache) {
+               return cache.match(event.request).then(function (response) {
+                    var fetchPromise = fetch(event.request).then(function (networkResponse) {
+                         cache.put(event.request, networkResponse.clone());
+                         return networkResponse;
+                    })
+                    return response || fetchPromise;
+               })
+          })
+     );
 })
 
 self.addEventListener('activate', function (event) {
      event.waitUntil(
           caches.keys().then(key => {
                key.forEach(keys => {
-                    if(keys != cahce_name) caches.delete(keys);
+                    if (keys != cahce_name) caches.delete(keys);
                })
           })
      )
 });
-
-async function cacheFirst(req) {
-     const cache = await caches.open(cahce_name);
-     const cached = await cache.match(req);
-     return cached || fetch(req);
-}
-
-async function networkRequest(req) {
-     const cache = await caches.open(cahce_name);
-
-     try {
-          const fresh = await fetch(req);
-          await cache.put(req, fresh.clone());
-          return fresh;
-     } catch (e) {
-          const cached = await cache.match(req);
-          return cached;
-     }
-}
