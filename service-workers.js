@@ -33,7 +33,7 @@ self.addEventListener('fetch', function (event) {
      // if(url.origin === location.origin) {
           event.respondWith(cacheFirst(req))
      // }else {
-          event.respondWith(networkRequest(req));
+          // event.respondWith(networkRequest(req));
      // }
 })
 
